@@ -1,0 +1,29 @@
+<ion-grid class="writing">
+  <!-- answer -->
+  <ion-row wrap justify-content-center>
+    <div *ngFor="let item of answers">
+      <button ion-button  block [@answerState]="answerState">
+        {{item}}
+      </button>
+    </div>
+    <div>
+      <button ion-button block [@pending]="pending" *ngIf="!disabled"></button>
+    </div>
+    <!-- <span *ngFor="let item of answers">{{item}}</span> -->
+  </ion-row>
+  <br>
+  <!-- keyboard -->
+  <ion-row wrap justify-content-center>
+    <div *ngFor="let item of options" class="option-answer">
+      <button ion-button outline (click)="pick(item)">
+        {{item}}
+      </button>
+    </div>
+    <button ion-button outline (click)="backspace()">
+        <i class="material-icons">backspace</i>
+    </button>
+  </ion-row>
+  <!-- buttons -->
+</ion-grid>
+
+<button ion-button block (click)="skip()">Learn</button>

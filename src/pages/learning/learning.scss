@@ -1,0 +1,30 @@
+page-learning {
+  .content {
+    font-family: 'Noto Sans';
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .speaker {
+    color: lightblue;
+    text-align: center;
+    opacity: 50%;
+  }
+
+  .meaning {
+    font-size: 140% !important;
+    white-space: initial;
+    // text-align: justify;
+  }
+
+  .nav-button {
+    height: 35px !important;
+  }
+
+  .learn-img {
+    font-size: 5em;
+    text-align: center;
+    width: 100%;
+    color: orange;
+  }
+}

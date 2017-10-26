@@ -1,0 +1,11 @@
+<ion-grid>
+  <!-- <p><small>Choose one correct answer.</small></p> -->
+  <ion-row wrap>
+    <ion-col col-12 *ngFor="let item of answers">
+      <button ion-button block color="light" (click)="checkAnswer(item)" class="answer"
+      [@answerState]="item.state">
+        {{item.content}}
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
