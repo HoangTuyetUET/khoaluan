@@ -27,7 +27,7 @@ export class Learning implements OnInit {
 
   constructor(private navCtrl: NavController, private navParams: NavParams, private wordService: WordService, private nativeService: NativeService) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
   	this.unitId = this.navParams.get('unitId');
     let word = this.navParams.get('word');
 
@@ -57,7 +57,7 @@ export class Learning implements OnInit {
 
   previous() {
     this.curNum --;
-    this.reload(); 
+    this.reload();
   }
 
   isEnd(): boolean {
@@ -87,7 +87,7 @@ export class Learning implements OnInit {
   }
 
   speak(): void {
-    this.nativeService.tts(this.curWord['content']);
+    this.nativeService.playSpeak(this.curWord['content'], this.curWord['soundUS']);
   }
 
   ionViewDidLoad() {

@@ -3,13 +3,25 @@ import { Injectable } from '@angular/core';
 import { TextToSpeech, NativeAudio, Vibration, NativeStorage } from 'ionic-native';
 
 @Injectable()
-export class NativeService { 
+export class NativeService {
   tts(text: string): void {
     TextToSpeech.speak(text)
       .then(() => console.log('Success'))
       .catch((reason: any) => console.log('tts: ' + text));
   }
-
+  playSpeak(fileName: string, link: string): void {
+    NativeAudio.preloadSimple(fileName, link)
+    .then(() => {
+      NativeAudio.play(fileName, () => {
+        NativeAudio.unload(fileName);
+      });
+    })
+      .catch((reason: any) => {
+        var audio = new Audio(link);
+        audio.play();
+        console.log(link);
+      });
+  }
   playAudio(fileName: string): void {
     NativeAudio.preloadSimple(fileName, 'assets/audio/' + fileName + '.mp3')
       .then(() => {
@@ -38,8 +50,8 @@ export class NativeService {
         if (temp.indexOf(value) < 0) {
           temp.push(value);
         }
-        
-        NativeStorage.setItem('learned', temp);               
+
+        NativeStorage.setItem('learned', temp);
       },
       err => {
         NativeStorage.setItem('learned', [ value ]);

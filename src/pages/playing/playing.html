@@ -3,6 +3,7 @@
     <ion-title *ngIf="selectedGame == 'r'">Reading</ion-title>
     <ion-title *ngIf="selectedGame == 'l'">Listening</ion-title>
     <ion-title *ngIf="selectedGame == 'w'">Spelling</ion-title>
+    <ion-title *ngIf="selectedGame == 's'">Speaking</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -39,9 +40,9 @@
       <div *ngIf="selectedGame == 'w'">
         <writing-page [curWord]="curWord" (onCorrect)="onCorrect($event)"></writing-page>
       </div>
-      <!-- <div *ngIf="selectedGame == 's'">
+      <div *ngIf="selectedGame == 's'">
         <speaking-page [curWord]="curWord" (onCorrect)="onCorrect($event)"></speaking-page>
-      </div> -->
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>

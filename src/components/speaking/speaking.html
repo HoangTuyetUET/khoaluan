@@ -1,26 +1,32 @@
 <ion-grid>
-  <ion-row> 
+  <ion-row>
     <ion-col width-100 style="height:auto; text-align:center">
       <div style="font-size: 240%; text-align: center">
-      <ion-icon *ngIf="percent < 15" name="ios-star-outline"></ion-icon>
-      <ion-icon style="color: #387ef5" *ngIf="percent >= 15" name="star"></ion-icon>
+      <ion-icon *ngIf="percent < 50" name="ios-star-outline"></ion-icon>
+      <ion-icon style="color: #387ef5" *ngIf="percent >= 50" name="star"></ion-icon>
 
-      <ion-icon *ngIf="percent < 30" name="ios-star-outline"></ion-icon>
-      <ion-icon style="color: #387ef5" *ngIf="percent >= 30" name="star"></ion-icon>
-      
-      <ion-icon *ngIf="percent < 45" name="ios-star-outline"></ion-icon>
-      <ion-icon style="color: #387ef5" *ngIf="percent >= 45" name="star"></ion-icon>
-      
-      <ion-icon *ngIf="percent < 60" name="ios-star-outline"></ion-icon>
-      <ion-icon style="color: #387ef5" *ngIf="percent >= 60" name="star"></ion-icon>
-      
-      <ion-icon *ngIf="percent < 80" ng-if name="ios-star-outline"></ion-icon>
+      <ion-icon *ngIf="percent < 70" name="ios-star-outline"></ion-icon>
+      <ion-icon style="color: #387ef5" *ngIf="percent >= 70" name="star"></ion-icon>
+
+      <ion-icon *ngIf="percent < 80" name="ios-star-outline"></ion-icon>
       <ion-icon style="color: #387ef5" *ngIf="percent >= 80" name="star"></ion-icon>
-    </div>
 
-    <button ion-fab fab-center outline style="margin-top: 30px; color: red; text-align: middle" (click)="record()">
+      <ion-icon *ngIf="percent < 90" name="ios-star-outline"></ion-icon>
+      <ion-icon style="color: #387ef5" *ngIf="percent >= 90" name="star"></ion-icon>
+
+      <ion-icon *ngIf="percent < 100" ng-if name="ios-star-outline"></ion-icon>
+      <ion-icon style="color: #387ef5" *ngIf="percent >= 100" name="star"></ion-icon>
+    </div>
+    <!-- <button ion-fab fab-center outline style="margin-top: 30px; color: red; text-align: middle" (click)="start()">
       <ion-icon name="{{texts}}"></ion-icon>
-    </button>
+    </button> -->
+
+  <h4 *ngIf="recognitionResult">Text:</h4>
+  <ion-spinner *ngIf="recognizing" name="dots" style="font-size: 10rem; text-align: center"></ion-spinner>
+  <span #recognitionResult></span>
+  <button ion-fab fab-center outline style="margin-top: 30px; text-align: middle" color="{{mic.color}}" (click)="processSpeech()"><ion-icon name="{{mic.icon}}"></ion-icon></button>
+
+
     </ion-col>
   </ion-row>
   <ion-row>
