@@ -5,7 +5,7 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicErrorHandler } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MyApp } from './app.component';
 import { Page1 } from '../pages/page1/page1';
@@ -13,18 +13,17 @@ import { Page2 } from '../pages/page2/page2';
 
 import { Book } from '../pages/book/book';
 import { Unit } from '../pages/unit/unit';
-import { Learning } from '../pages/learning/learning'; 
+import { Learning } from '../pages/learning/learning';
 import { Playing } from '../pages/playing/playing';
 import { Review } from '../pages/review/review';
 import { About } from '../pages/about/about';
 
 import { Listening } from '../components/listening/listening';
 import { Reading } from '../components/reading/reading';
-//import { Speaking } from '../components/speaking/speaking';
+import { Speaking } from '../components/speaking/speaking';
 import { Writing } from '../components/writing/writing';
 import { Login } from '../components/login/login';
 import { MyTitle } from '../components/my-title/my-title';
-
 
 @NgModule({
   declarations: [
@@ -38,10 +37,12 @@ import { MyTitle } from '../components/my-title/my-title';
     Playing,
     Listening,
     Reading,
+    Speaking,
     Writing,
     Login,
     About,
-    MyTitle
+    MyTitle,
+
   ],
   imports: [
     BrowserModule,
@@ -59,7 +60,8 @@ import { MyTitle } from '../components/my-title/my-title';
     Learning,
     Playing,
     Review,
-    About
+    About,
+    MyTitle,
   ],
   providers: [
     StatusBar,

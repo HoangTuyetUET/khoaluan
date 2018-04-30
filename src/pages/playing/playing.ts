@@ -50,7 +50,7 @@ export class Playing implements OnInit {
   constructor(private navCtrl: NavController, private navParams: NavParams, private wordService: WordService,
               private helperService: HelperService, private zone: NgZone, private nativeService: NativeService) { }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.unitId = this.navParams.get('unitId');
 
     this.wordService.getWordsByUnit(this.unitId).then(result => {
@@ -58,10 +58,13 @@ export class Playing implements OnInit {
       // Gán allWords là mảng dữ liệu không đổi
       this.allWords = this.words.slice();
 
-      // Tạm thời gán cho 'games' 4 giá trị l, s, r, w. 
+      // Tạm thời gán cho 'games' 4 giá trị l, s, r, w.
       // Khi lưu dữ liệu sẽ thay đổi tùy theo.
+      // for (let i = 0; i < this.words.length; i++) {
+      //   this.words[i]['games'] = [ 'r', 'l', 'w', 's' ];
+      // }
       for (let i = 0; i < this.words.length; i++) {
-        this.words[i]['games'] = [ 'r', 'l', 'w' ];
+        this.words[i]['games'] = [ 's' ];
       }
 
       this.reload();
@@ -92,7 +95,7 @@ export class Playing implements OnInit {
             this.words[i]['games'].splice(j, 1);
             break;
           }
-        } 
+        }
         break;
       }
     }
@@ -110,10 +113,10 @@ export class Playing implements OnInit {
     if (this.words.length == 0) {
       this.navCtrl.pop();
     } else {
-      this.reload();    
+      this.reload();
     }
   }
-  
+
   onCorrect(correct: boolean): void {
     if (correct) {
       this.iconState = 'right';

@@ -66,7 +66,7 @@ export class Listening implements OnInit, OnChanges {
   autoplay(): void {
     let TIME = 2000;
     let no = this.answers.length;
-    
+
     for (let i = 0; i <= no; i++) {
       this.timeout[i] = setTimeout(() => {
         // Reset color
@@ -76,7 +76,7 @@ export class Listening implements OnInit, OnChanges {
 
         if (i != no) {
           this.nativeService.tts(this.answers[i]['content']);
-          this.answers[i]['state'] = 'pending';  
+          this.answers[i]['state'] = 'pending';
         }
       }, i * TIME);
     }
@@ -134,7 +134,7 @@ export class Listening implements OnInit, OnChanges {
     if (this.disabled) return;
 
     this.choosen = item;
-    this.nativeService.tts(item['content']);
+    this.nativeService.playSpeak(item['content'], item['soundUS']);
 
     for (let i = 0; i < this.answers.length; i++) {
       this.answers[i]['state'] = '';

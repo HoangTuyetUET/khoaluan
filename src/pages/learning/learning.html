@@ -9,7 +9,7 @@
 
   <ion-card *ngIf="words.length <= 0">
     <!-- <img src="assets/img/learn.png"/> -->
-    <ion-icon name="md-recording" class="learn-img"></ion-icon>  
+    <ion-icon name="md-recording" class="learn-img"></ion-icon>
     <ion-card-content>
       <ion-card-title style="color:#4db593">
         You have learned all the words of this unit!
@@ -37,7 +37,7 @@
     <p text-center>
       <small>
         <a href="mailto:lienhe@sachmem.vn??Subject={{curWord.content}}">
-          <ion-icon name="ios-image-outline" class="learn-img"></ion-icon>  
+          <ion-icon name="ios-image-outline" class="learn-img"></ion-icon>
         </a>
       </small>
     </p>
@@ -49,15 +49,11 @@
 
     <!-- <ion-item > -->
     <ion-col text-center>
-      <h2 class="content" color="primary" (click)="speak()"> {{curWord.content}}
-        <!-- <button ion-button icon-only clear (click)="speak()"> -->
-        <!-- </button> -->
-      </h2>
-      <h3><ion-icon (click)="speak()" name="volume-up" class="speaker"></ion-icon></h3>
+      <h2 class="content" color="primary" (click)="speak()"> {{curWord.content}}</h2>
+      <h3><ion-icon (click)="speak()" name="volume-up" class="speaker button button-clear"></ion-icon></h3>
       <p class="meaning">{{curWord.meaning}}</p>
     <!-- </ion-item> -->
     </ion-col>
-
     <ion-item *ngIf="pageType == 0">
       <button ion-button icon-start item-start round outline class="nav-button" [disabled]="isBegin()" (click)="previous()">
         <ion-icon name="arrow-back"></ion-icon>
